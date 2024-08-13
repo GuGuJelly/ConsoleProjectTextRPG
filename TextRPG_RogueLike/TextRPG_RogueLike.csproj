@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="C:\Persornal\ConsoleProject_TextRPG\ConsoleProjectTextRPG\Program.cs" Link="Program.cs" />
+    <Compile Include="C:\Persornal\ConsoleProject_TextRPG\Game.cs" Link="Game.cs" />
+    <Compile Include="C:\Persornal\ConsoleProject_TextRPG\Program.cs" Link="Program.cs" />
+  </ItemGroup>
+
+</Project>
