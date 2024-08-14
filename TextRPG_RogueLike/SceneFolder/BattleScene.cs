@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_RogueLike.Scenes
+namespace TextRPG_RogueLike
 {
-    public class InventoryScene : Scene
+    public class BattleScene : Scene
     {
-        public InventoryScene(Game game) : base(game)
+        public BattleScene(Game game) : base(game)
         {
 
         }
-
         public override void Enter()
         {
             throw new NotImplementedException();

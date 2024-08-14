@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_RogueLike.Scenes
+namespace TextRPG_RogueLike
 {
     public class TitleScene : Scene
     {
+        
         public TitleScene(Game game) : base(game) 
         {
 
@@ -22,11 +23,6 @@ namespace TextRPG_RogueLike.Scenes
             
         }
 
-        public override void Input()
-        {
-            
-        }
-
         public override void Render()
         {
             Console.WriteLine("##########################################");
@@ -36,12 +32,20 @@ namespace TextRPG_RogueLike.Scenes
             Console.WriteLine("#                                        #");
             Console.WriteLine("#                                        #");
             Console.WriteLine("##########################################");
+
+            Console.WriteLine("                 게임 시작                 ");
+
+        }
+
+        public override void Input()
+        {
+            Console.WriteLine("계속하려면 아무 키나 누르세요 ");
+            Console.ReadKey();
         }
 
         public override void Update()
         {
-            Thread.Sleep(2000);
-            game.ChangeScene(SceneType.Select);
+            game.ChangeScene(SceneType.Select);// 작동을 안합니다
         }
     }
 }

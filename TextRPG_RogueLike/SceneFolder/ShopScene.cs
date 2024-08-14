@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_RogueLike.Scenes
+namespace TextRPG_RogueLike
 {
-    public class BossMonsterRoom : Scene
+    public class ShopScene : Scene
     {
-        public BossMonsterRoom(Game game) : base(game) 
+        public ShopScene(Game game) : base(game) 
         {
 
         }

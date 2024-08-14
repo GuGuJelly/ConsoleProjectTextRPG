@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_RogueLike.Monster
+namespace TextRPG_RogueLike
 {
     public class Monster
     {
@@ -14,12 +14,19 @@ namespace TextRPG_RogueLike.Monster
         public int monsterCurHP;
         public int monstermaxMP;
         public int monsterCurMP;
+        public int monsterAttackPoint;
+        public int monsterDefencePoint;
 
         public Monster(string monsterName) 
         {
-            monsterName = "";
+            this.monsterName = "아무개";
             monsterLevel = 1;
-            monsterHP = 100;
+            monstermaxHP = 100;
+            monsterCurHP = 100;
+            monstermaxMP = 30;
+            monsterCurMP = 30;
+            monsterAttackPoint = 20;
+            monsterDefencePoint = 5;
 
         }
     }

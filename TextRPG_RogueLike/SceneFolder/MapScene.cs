@@ -8,14 +8,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_RogueLike.Scenes
+namespace TextRPG_RogueLike
 {
     public class MapScene : Scene
     {
         public SceneType scenes;
         //private bool[,] mapPos;
-        private int playerPos;
-        public int goalPos;
+        public SceneType playerPos;
+        public SceneType goalPos;
 
         public MapScene(Game game) : base(game)
         {
@@ -44,24 +44,24 @@ namespace TextRPG_RogueLike.Scenes
             //    }
             //}
 
-            LinkedList<int> linkedListMap = new LinkedList<int>();
-            LinkedListNode<int> node1 = linkedListMap.AddFirst((int)SceneType.SafeHouse);
-            LinkedListNode<int> node2 = linkedListMap.AddLast((int)SceneType.MonsterRoom);
-            LinkedListNode<int> node3 = linkedListMap.AddLast((int)SceneType.MonsterRoom);
-            LinkedListNode<int> node4 = linkedListMap.AddLast((int)SceneType.MonsterRoom);
-            LinkedListNode<int> node5 = linkedListMap.AddLast((int)SceneType.BossMonsterRoom);
-            LinkedListNode<int> node6 = linkedListMap.AddLast((int)SceneType.Shop);
-            LinkedListNode<int> node7 = linkedListMap.AddLast((int)SceneType.MonsterRoom);
-            LinkedListNode<int> node8 = linkedListMap.AddLast((int)SceneType.MonsterRoom);
-            LinkedListNode<int> node9 = linkedListMap.AddLast((int)SceneType.MonsterRoom);
-            LinkedListNode<int> node10 = linkedListMap.AddLast((int)SceneType.BossMonsterRoom);
-            LinkedListNode<int> node11 = linkedListMap.AddLast((int)SceneType.Shop);
-            LinkedListNode<int> node12 = linkedListMap.AddLast((int)SceneType.MonsterRoom);
-            LinkedListNode<int> node14 = linkedListMap.AddLast((int)SceneType.MonsterRoom);
-            LinkedListNode<int> node15 = linkedListMap.AddLast((int)SceneType.MonsterRoom);
-            LinkedListNode<int> node16 = linkedListMap.AddLast((int)SceneType.BossMonsterRoom);
-            LinkedListNode<int> node17 = linkedListMap.AddLast((int)SceneType.Shop);
-            LinkedListNode<int> node18 = linkedListMap.AddLast((int)SceneType.BossMonsterRoom);
+            LinkedList<SceneType> linkedListMap = new LinkedList<SceneType>();
+            LinkedListNode<SceneType> node1 = linkedListMap.AddFirst(SceneType.SafeHouse);
+            LinkedListNode<SceneType> node2 = linkedListMap.AddLast(SceneType.MonsterRoom);
+            LinkedListNode<SceneType> node3 = linkedListMap.AddLast(SceneType.MonsterRoom);
+            LinkedListNode<SceneType> node4 = linkedListMap.AddLast(SceneType.MonsterRoom);
+            LinkedListNode<SceneType> node5 = linkedListMap.AddLast(SceneType.BossMonsterRoom);
+            LinkedListNode<SceneType> node6 = linkedListMap.AddLast(SceneType.Shop);
+            LinkedListNode<SceneType> node7 = linkedListMap.AddLast(SceneType.MonsterRoom);
+            LinkedListNode<SceneType> node8 = linkedListMap.AddLast(SceneType.MonsterRoom);
+            LinkedListNode<SceneType> node9 = linkedListMap.AddLast(SceneType.MonsterRoom);
+            LinkedListNode<SceneType> node10 = linkedListMap.AddLast(SceneType.BossMonsterRoom);
+            LinkedListNode<SceneType> node11 = linkedListMap.AddLast(SceneType.Shop);
+            LinkedListNode<SceneType> node12 = linkedListMap.AddLast(SceneType.MonsterRoom);
+            LinkedListNode<SceneType> node14 = linkedListMap.AddLast(SceneType.MonsterRoom);
+            LinkedListNode<SceneType> node15 = linkedListMap.AddLast(SceneType.MonsterRoom);
+            LinkedListNode<SceneType> node16 = linkedListMap.AddLast(SceneType.BossMonsterRoom);
+            LinkedListNode<SceneType> node17 = linkedListMap.AddLast(SceneType.Shop);
+            LinkedListNode<SceneType> node18 = linkedListMap.AddLast(SceneType.BossMonsterRoom);
 
             playerPos = linkedListMap.First();
             goalPos = linkedListMap.Last();

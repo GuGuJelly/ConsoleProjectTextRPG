@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_RogueLike.Scenes
+namespace TextRPG_RogueLike
 {
     public abstract class Scene
     {
-        protected Game game;
+        public Game game;
 
         public Scene(Game game)
         {
