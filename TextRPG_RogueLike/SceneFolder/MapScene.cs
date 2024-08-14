@@ -7,6 +7,7 @@ using System.Runtime.ExceptionServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace TextRPG_RogueLike
 {
@@ -85,7 +86,10 @@ namespace TextRPG_RogueLike
 
         public override void Render()
         {
-            throw new NotImplementedException();
+            MapScene mapScene = new(game);
+            Console.WriteLine("다음방으로 향합니다.");
+            linkedListMap = 
+            //playerPos = node1.Next;
         }
 
         public override void Update()

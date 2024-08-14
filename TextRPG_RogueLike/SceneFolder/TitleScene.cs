@@ -45,7 +45,7 @@ namespace TextRPG_RogueLike
 
         public override void Update()
         {
-            game.ChangeScene(SceneType.Select);// 작동을 안합니다
+            game.ChangeScene(SceneType.Select);
         }
     }
 }

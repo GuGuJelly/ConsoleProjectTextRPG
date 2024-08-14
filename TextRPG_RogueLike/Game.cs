@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using TextRPG_RogueLike.SceneFolder;
 
 
+
 namespace TextRPG_RogueLike
 {
     public class Game
@@ -19,15 +20,14 @@ namespace TextRPG_RogueLike
         private MapScene mapScene;
         private SceneType playerPos;
         public SceneType goalPos;
-        public SkillList skillList;
         public Monster monster;
         public Skill skill;
         private Scene[] scenes;
         private Scene curScene;
         private Scene prevScene;
         public Scene CurScene { get { return curScene; } }
-        private Player player;
-        public Player Player { get { return player; } }
+        public Player player;
+        //public Player Player { get { return player; } set { player = value; } }
 
 
         public void Run()
