@@ -10,7 +10,10 @@ namespace TextRPG_RogueLike
     {
         public FireBall()
         {
-
+            this.skillName = SkillList.FireBall;
+            this.player.playercurMP -= 5;
+            this.skillPower = 20;
+            this.skillDamage = player.playerAttackPoint + skillPower;
         }
     }
 }

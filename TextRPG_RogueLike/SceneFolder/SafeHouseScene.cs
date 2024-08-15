@@ -8,7 +8,6 @@ namespace TextRPG_RogueLike
 {
     public class SafeHouseScene : Scene
     {
-        public int input;
         public MapScene mapScene;
         
         public SafeHouseScene(Game game) : base(game)
@@ -17,7 +16,9 @@ namespace TextRPG_RogueLike
         }
         public override void Enter()
         {
+            Player player = new Player();
             Console.Clear();
+            player.ShowPlayer();
             Console.WriteLine("당신은 안전한 곳에서 눈을 뜹니다.");
             Console.WriteLine();
             Thread.Sleep(1000);
@@ -37,37 +38,22 @@ namespace TextRPG_RogueLike
 
         public override void Exit()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("방을 빠져나갑니다.");
         }
 
         public override void Input()
         {
-
-            int.TryParse(Console.ReadLine(), out int input);
-            if (input <= 0 || input > 2)
-            {
-                Input();
-            }
+            Console.ReadKey();
         }
 
         public override void Render()
         {
             mapScene.Render();
-            switch (input)
-            {
-                case 1:
-                    Console.WriteLine("통로에 들어갑니다.");
-                    game.ChangeScene(SceneType.MonsterRoom);
-                    break;
-                case 2:
-                    Console.WriteLine("주변을 둘러봅니다.");
-                    break;
-            }
         }
 
         public override void Update()
         {
-            throw new NotImplementedException();
+            game.ChangeScene(SceneType.MonsterRoom);
         }
     }
 }

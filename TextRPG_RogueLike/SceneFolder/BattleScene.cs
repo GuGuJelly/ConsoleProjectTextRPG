@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace TextRPG_RogueLike
 {
     public class BattleScene : Scene
     {
+        public Player player;
         public BattleScene(Game game) : base(game)
         {
 
@@ -34,7 +36,10 @@ namespace TextRPG_RogueLike
 
         public override void Update()
         {
-            throw new NotImplementedException();
+            if (player.playerBuffDeffence != player.playerdefencePoint)
+            {
+                player.playerBuffDeffence = player.playerdefencePoint;
+            }
         }
     }
 }

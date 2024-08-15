@@ -71,24 +71,24 @@ namespace TextRPG_RogueLike
         }
             public override void Enter()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("이것은 맵입니다.");
         }
 
         public override void Exit()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("방을 빠져나갑니다.");
         }
 
         public override void Input()
         {
-            throw new NotImplementedException();
+            Console.ReadKey();            
         }
 
         public override void Render()
         {
             MapScene mapScene = new(game);
             Console.WriteLine("다음방으로 향합니다.");
-            linkedListMap = 
+            
             //playerPos = node1.Next;
         }
 
