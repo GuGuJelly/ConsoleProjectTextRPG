@@ -43,12 +43,13 @@ namespace TextRPG_RogueLike
 
         public override void Input()
         {
+            Console.WriteLine("진행을 위해 아무키나 입력하세요.");
             Console.ReadKey();
         }
 
         public override void Render()
         {
-            mapScene.Render();
+            
         }
 
         public override void Update()

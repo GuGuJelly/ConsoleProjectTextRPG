@@ -8,26 +8,16 @@ namespace TextRPG_RogueLike
 {
     public class Monster
     {
-        public string monsterName;
-        public int monsterLevel;
+        public string mName;
+        public MonsterType monsterType;
+        public ItemType itemType;
+        public ItemType dropItem;
         public int monstermaxHP;
-        public int monsterCurHP;
+        public int monstercurHP;
         public int monstermaxMP;
-        public int monsterCurMP;
-        public int monsterAttackPoint;
-        public int monsterDefencePoint;
+        public int monstercurMP;
+        public int monsterAP;
+        public int monsterDP;
 
-        public Monster(string monsterName) 
-        {
-            this.monsterName = "아무개";
-            monsterLevel = 1;
-            monstermaxHP = 100;
-            monsterCurHP = 100;
-            monstermaxMP = 30;
-            monsterCurMP = 30;
-            monsterAttackPoint = 20;
-            monsterDefencePoint = 5;
-
-        }
     }
 }

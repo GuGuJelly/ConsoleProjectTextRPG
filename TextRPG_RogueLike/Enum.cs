@@ -10,4 +10,6 @@ namespace TextRPG_RogueLike
     
     public enum SkillList { FireBall, IceShield, Heal, Slash, Guard, Size }
     public enum SkillBook { FireBall, IceShield, Heal }
+    public enum MonsterType { Dummy, Slime, Orc, RatMan, BigSlime, OrcKing }
+    public enum ItemType { ShortSword, RoundShield, LongSword, TowerShield, AllPotion, Gold }
 }
