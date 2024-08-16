@@ -54,7 +54,7 @@ namespace TextRPG_RogueLike
             
 
             //game.monsterFactory.monsterCurHP -= skill.skillTotalDamage - game.monster.monsterDefencePoint;
-            Console.WriteLine($"몬스터에게 {playerSkill[0].skillTotalDamage - monster.monsterDP} 만큼의 데미지를 주었습니다.");
+            Console.WriteLine($"몬스터에게 {game.Player.playerSkill[0].skillTotalDamage - game.monster.monsterDP} 만큼의 데미지를 주었습니다.");
         }
 
         public void GuardPlayer()

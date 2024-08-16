@@ -16,9 +16,8 @@ namespace TextRPG_RogueLike
         }
         public override void Enter()
         {
-            Player player = new Player();
             Console.Clear();
-            player.ShowPlayer();
+            game.Player.ShowPlayer();
             Console.WriteLine("당신은 안전한 곳에서 눈을 뜹니다.");
             Console.WriteLine();
             Thread.Sleep(1000);
