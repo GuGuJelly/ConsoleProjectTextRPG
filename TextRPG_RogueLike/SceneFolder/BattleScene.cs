@@ -10,7 +10,7 @@ namespace TextRPG_RogueLike
    
     public class BattleScene : Scene
     {
-        public Player player;
+        
         private int input;
         
         public BattleScene(Game game) : base(game)
@@ -37,7 +37,50 @@ namespace TextRPG_RogueLike
 
         public override void Render()
         {
+            Random random = new Random();
+            int spownMonster = random.Next((int)MonsterType.Slime, (int)MonsterType.RatMan);
             
+            switch (spownMonster)
+            {
+                case (int)MonsterType.Orc:
+                    game.OrcFactory.SetmName("Orc");
+                    Console.WriteLine("Orc와 조우했습니다.");
+                    game.OrcFactory.SetMonsterType(MonsterType.Orc);
+                    game.OrcFactory.SetMonstermaxHP(200);
+                    game.OrcFactory.SetMonstercurHP(200);
+                    game.OrcFactory.SetMonstermaxMP(10);
+                    game.OrcFactory.SetMonstercurMP(10);
+                    game.OrcFactory.SetMonsterAP(40);
+                    game.OrcFactory.SetMonsterDP(10);
+                    game.OrcFactory.SetDropItem(ItemType.AllPotion);
+                    break;
+
+                case (int)MonsterType.Slime:
+                    game.SlimeFactory.SetmName("Slime");
+                    Console.WriteLine("Slime 과 조우했습니다.");
+                    game.SlimeFactory.SetMonsterType(MonsterType.Slime);
+                    game.SlimeFactory.SetMonstermaxHP(150);
+                    game.SlimeFactory.SetMonstercurHP(150);
+                    game.SlimeFactory.SetMonstermaxMP(10);
+                    game.SlimeFactory.SetMonstercurMP(10);
+                    game.SlimeFactory.SetMonsterAP(30);
+                    game.SlimeFactory.SetMonsterDP(20);
+                    game.SlimeFactory.SetDropItem(ItemType.LongSword);
+                    break;
+
+                case (int)MonsterType.RatMan:
+                    game.RatManFactory.SetmName("RatMan");
+                    Console.WriteLine("RatMan 과 조우했습니다.");
+                    game.RatManFactory.SetMonsterType(MonsterType.RatMan);
+                    game.RatManFactory.SetMonstermaxHP(300);
+                    game.RatManFactory.SetMonstercurHP(300);
+                    game.RatManFactory.SetMonstermaxMP(10);
+                    game.RatManFactory.SetMonstercurMP(10);
+                    game.RatManFactory.SetMonsterAP(25);
+                    game.RatManFactory.SetMonsterDP(15);
+                    game.RatManFactory.SetDropItem(ItemType.TowerShield);
+                    break;
+            }
         }
 
         public override void Update()
@@ -45,29 +88,29 @@ namespace TextRPG_RogueLike
             switch (input)
             {
                 case 1:
-                    player.SlashPlayer();
+                    game.Player.SlashPlayer();
                     break;
 
                 case 2:
-                    player.GuardPlayer();
+                    game.Player.GuardPlayer();
                     break;
 
                 case 3:
-                    player.FirBallPlayer();
+                    game.Player.FirBallPlayer();
                     break;
 
                 case 4:
-                    player.IceShieldPlayer();
+                    game.Player.IceShieldPlayer();
                     break;
 
                 case 5:
-                    player.HealPlayer();
+                    game.Player.HealPlayer();
                     break;
             }
 
-            if (game.monsterFactory.monstercurHP <= 0 ) 
+            if (game.monster.monstercurHP <= 0 ) 
             {
-                game.player.playerBuffDeffence = game.player.playercurHP;
+                game.Player.playerBuffDeffence = game.Player.playercurHP;
                 game.ChangeScene(SceneType.MonsterRoom);
             }
             

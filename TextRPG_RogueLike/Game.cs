@@ -21,16 +21,23 @@ namespace TextRPG_RogueLike
         private SceneType playerPos;
         public SceneType goalPos;
         public Monster monster;
-        public Skill skill;
         private Scene[] scenes;
         private Scene curScene;
         private Scene prevScene;
         public Scene CurScene { get { return curScene; } }
-        public Player player;
-        //public Player Player { get { return player; } set { player = value; } }
-        public MonsterFactory monsterFactory = new MonsterFactory();
-
-
+        private Player player;
+        public Player Player { get { return player; } set { player = value; } }
+        public MonsterFactory OrcFactory = new MonsterFactory();
+        public MonsterFactory SlimeFactory = new MonsterFactory();
+        public MonsterFactory RatManFactory = new MonsterFactory();
+        public Slash slash;
+        public FireBall fireBall;
+        public Guard guard;
+        public Heal heal;
+        public IceShield iceShield;
+        public Skill skill;
+        
+        
         public void Run()
         {
             Start();
@@ -60,6 +67,16 @@ namespace TextRPG_RogueLike
             scenes[(int)SceneType.MonsterRoom] = new MonsterRoomScene(this);
             scenes[(int)SceneType.BossMonsterRoom] = new BossMonsterRoomScene(this);
             scenes[(int)SceneType.Goal] = new GoalScene(this);
+            scenes[(int)SceneType.Battle] = new BattleScene(this);  
+
+            player = new Player();
+            Skill skill = new Skill();
+            slash = new Slash();
+            fireBall = new FireBall();
+            heal = new Heal();
+            iceShield = new IceShield();
+            guard = new Guard();
+
 
             curScene = scenes[(int)SceneType.Title];
             CurScene.Enter();

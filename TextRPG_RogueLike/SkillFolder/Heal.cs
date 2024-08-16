@@ -17,9 +17,9 @@ namespace TextRPG_RogueLike
         public void Healing()
         {
             skillPower = 10;
-            skillhealPoint = skillPower+player.playerAttackPoint;
-            player.playercurHP += skillhealPoint;
-            Console.WriteLine($"{player.playercurHP}(+{skillhealPoint})만큼 회복됐습니다.");
+            skillhealPoint = skillPower+ game.Player.playerAttackPoint;
+            game.Player.playercurHP += skillhealPoint;
+            Console.WriteLine($"{game.Player.playercurHP}(+{skillhealPoint})만큼 회복됐습니다.");
         }
     }
 }

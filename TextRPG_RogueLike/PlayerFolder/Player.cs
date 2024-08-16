@@ -26,7 +26,7 @@ namespace TextRPG_RogueLike
         public Monster monster;
         public MonsterFactory monsterFactory;
 
-        public Player() 
+        public Player()
         {
             playername = string.Empty;
             playerlevel = 1;
@@ -49,7 +49,8 @@ namespace TextRPG_RogueLike
         public void SlashPlayer()
         {
             Console.WriteLine("슬래쉬로 몬스터를 공격합니다");
-            monsterFactory.monstercurHP -= skill.skillTotalDamage - monsterFactory.monsterDP;
+             //skill.skillTotalDamage - monsterFactory.monsterDP;
+            monsterFactory.monstercurHP -= skill.skillTotalDamage - monsterFactory.monsterDP; ;
             //game.monsterFactory.monsterCurHP -= skill.skillTotalDamage - game.monster.monsterDefencePoint;
             Console.WriteLine($"몬스터에게 {skill.skillTotalDamage - monsterFactory.monsterDP} 만큼의 데미지를 주었습니다.");
         }

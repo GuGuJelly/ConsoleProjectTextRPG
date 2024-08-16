@@ -40,49 +40,7 @@ namespace TextRPG_RogueLike
 
         public override void Render()
         {
-            Random random = new Random();
-            int spownMonster = random.Next((int)MonsterType.Slime,(int)MonsterType.RatMan);
-            switch (spownMonster)
-            {
-                case (int)MonsterType.Orc:
-                    game.monsterFactory.SetmName("Orc");
-                    Console.WriteLine("Orc와 조우했습니다.");
-                    game.monsterFactory.SetMonsterType(MonsterType.Orc);
-                    game.monsterFactory.SetMonstermaxHP(200);
-                    game.monsterFactory.SetMonstercurHP(200);
-                    game.monsterFactory.SetMonstermaxMP(10);
-                    game.monsterFactory.SetMonstercurMP(10);
-                    game.monsterFactory.SetMonsterAP(40);
-                    game.monsterFactory.SetMonsterDP(10);
-                    game.monsterFactory.SetDropItem(ItemType.AllPotion);
-                    break;
-
-                case (int)MonsterType.Slime:
-                    game.monsterFactory.SetmName("Slime");
-                    Console.WriteLine("Slime 과 조우했습니다.");
-                    game.monsterFactory.SetMonsterType(MonsterType.Slime);
-                    game.monsterFactory.SetMonstermaxHP(150);
-                    game.monsterFactory.SetMonstercurHP(150);
-                    game.monsterFactory.SetMonstermaxMP(10);
-                    game.monsterFactory.SetMonstercurMP(10);
-                    game.monsterFactory.SetMonsterAP(30);
-                    game.monsterFactory.SetMonsterDP(20);
-                    game.monsterFactory.SetDropItem(ItemType.LongSword);
-                    break;
-
-                case (int)MonsterType.RatMan:
-                    game.monsterFactory.SetmName("RatMan");
-                    Console.WriteLine("RatMan 과 조우했습니다.");
-                    game.monsterFactory.SetMonsterType(MonsterType.RatMan);
-                    game.monsterFactory.SetMonstermaxHP(300);
-                    game.monsterFactory.SetMonstercurHP(300);
-                    game.monsterFactory.SetMonstermaxMP(10);
-                    game.monsterFactory.SetMonstercurMP(10);
-                    game.monsterFactory.SetMonsterAP(25);
-                    game.monsterFactory.SetMonsterDP(15);
-                    game.monsterFactory.SetDropItem(ItemType.TowerShield);
-                    break;
-            }
+            
         }
         public override void Update()
         {

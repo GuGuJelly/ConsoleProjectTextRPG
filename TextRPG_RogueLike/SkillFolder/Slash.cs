@@ -11,8 +11,8 @@ namespace TextRPG_RogueLike
         public Slash() 
         {
             this.skillName = SkillList.Slash;
-            this.skillPower = 10;
-            this.skillDamage = player.playerAttackPoint + skillPower;
+            this.skillPower = 10;//playerAttackPoint + skillPower
+            this.skillDamage = game.Player.playerAttackPoint + skillPower;
         }  
     }
 }

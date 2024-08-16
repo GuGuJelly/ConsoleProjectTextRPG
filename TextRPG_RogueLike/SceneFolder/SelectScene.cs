@@ -18,8 +18,8 @@ namespace TextRPG_RogueLike
 
         private string input;
         private string nameInput;
+
         
-        Player player = new Player();
         public SelectScene(Game game) : base(game)
         {
             
@@ -48,13 +48,13 @@ namespace TextRPG_RogueLike
             }else if(curState == State.Confirm) 
             {
                 Console.WriteLine("===================");
-                Console.WriteLine($"이름 : {player.playername}");
-                Console.WriteLine($"체력 : {player.playercurHP}/{player.playermaxHP}");
-                Console.WriteLine($"MP : {player.playercurMP}/{player.playermaxMP}");
-                Console.WriteLine($"공격 : {player.playerAttackPoint}");
-                Console.WriteLine($"방어 : {player.playerdefencePoint}");
-                Console.WriteLine($"소지금 : {player.playerGold}");
-                Console.WriteLine($"스킬 : {player.playerSkill[0]}, {player.playerSkill[1]}");
+                Console.WriteLine($"이름 : {game.Player.playername}");
+                Console.WriteLine($"체력 : {game.Player.playercurHP}/{game.Player.playermaxHP}");
+                Console.WriteLine($"MP : {game.Player.playercurMP}/{game.Player.playermaxMP}");
+                Console.WriteLine($"공격 : {game.Player.playerAttackPoint}");
+                Console.WriteLine($"방어 : {game.Player.playerdefencePoint}");
+                Console.WriteLine($"소지금 : {game.Player.playerGold}");
+                Console.WriteLine($"스킬 : {game.Player.playerSkill[0]}, {game.Player.playerSkill[1]}");
                 Console.WriteLine("===================");
                 Console.WriteLine();
                 Console.Write("이대로 플레이 하시겠습니까?(y/n)");
@@ -69,7 +69,7 @@ namespace TextRPG_RogueLike
                     return;
 
                 nameInput = input;
-                player.playername = nameInput;
+                game.Player.playername = nameInput;
                 curState = State.Confirm;
             }
             else if (curState == State.Confirm)
