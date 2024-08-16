@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextRPG_RogueLike
 {
-    public class MonsterFactory : Monster
+    public class MonsterBuilder : Monster
     {
         //public string mName;
         //public MonsterType monsterType;
@@ -19,7 +19,7 @@ namespace TextRPG_RogueLike
         //public int monsterAP;
         //public int monsterDP;
 
-        public MonsterFactory() 
+        public MonsterBuilder() 
         {
             mName = string.Empty;
             monsterType = MonsterType.Orc;
@@ -30,6 +30,22 @@ namespace TextRPG_RogueLike
             monsterAP = 40;
             monsterDP = 10;
             dropItem = ItemType.Gold;
+        }
+
+        public Monster Build()
+        {
+            Monster monster = new Monster();
+            monster.mName = this.mName;
+            monster.monsterType = this.monsterType;
+            monster.monstermaxHP = this.monstermaxHP;
+            monster.monstercurHP = this.monstercurHP;
+            monster.monstermaxMP = this.monstermaxMP;
+            monster.monstercurMP = this.monstercurMP;
+            monster.monsterAP = this.monsterAP;
+            monster.monsterDP = this.monsterDP;
+            monster.dropItem = this.dropItem;
+
+            return monster;
         }
 
         public void SetmName(string mName) 

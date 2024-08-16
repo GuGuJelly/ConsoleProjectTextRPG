@@ -19,5 +19,6 @@ namespace TextRPG_RogueLike
         public int monsterAP;
         public int monsterDP;
 
+        
     }
 }

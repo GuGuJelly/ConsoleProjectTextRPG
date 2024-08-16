@@ -21,10 +21,11 @@ namespace TextRPG_RogueLike
         public int playerBuffDeffence;
         public int playerGold;
         public SkillList skillList;
-        public List<SkillList> playerSkill = new List<SkillList>();
+        public List<Skill> playerSkill = new List<Skill>();
         public Skill skill;
         public Monster monster;
-        public MonsterFactory monsterFactory;
+        public MonsterBuilder monsterBuilder;
+        public Game game;
 
         public Player()
         {
@@ -38,21 +39,22 @@ namespace TextRPG_RogueLike
             playerdefencePoint = 10;
             playerBuffDeffence = playerdefencePoint;
             playerGold = 50;
-            playerSkill.Add(SkillList.Slash);
-            playerSkill.Add(SkillList.Guard);
-            playerSkill.Add(SkillList.FireBall);
-            playerSkill.Add(SkillList.IceShield);
-            playerSkill.Add(SkillList.Heal);
+            playerSkill.Add(new Slash(this));
+            playerSkill.Add(new Guard(this));
+            playerSkill.Add(new FireBall(this));
+            playerSkill.Add(new IceShield(this));
+            playerSkill.Add(new Heal(this));
         }
 
 
         public void SlashPlayer()
         {
+            //playerSkill[0]
             Console.WriteLine("슬래쉬로 몬스터를 공격합니다");
-             //skill.skillTotalDamage - monsterFactory.monsterDP;
-            monsterFactory.monstercurHP -= skill.skillTotalDamage - monsterFactory.monsterDP; ;
+            
+
             //game.monsterFactory.monsterCurHP -= skill.skillTotalDamage - game.monster.monsterDefencePoint;
-            Console.WriteLine($"몬스터에게 {skill.skillTotalDamage - monsterFactory.monsterDP} 만큼의 데미지를 주었습니다.");
+            Console.WriteLine($"몬스터에게 {playerSkill[0].skillTotalDamage - monster.monsterDP} 만큼의 데미지를 주었습니다.");
         }
 
         public void GuardPlayer()
@@ -65,24 +67,23 @@ namespace TextRPG_RogueLike
         public void FirBallPlayer()
         {
             Console.WriteLine("당신은 FireBall로 몬스터를 공격합니다.");
-            monsterFactory.monstercurHP -= skill.skillDamage - monsterFactory.monsterDP;
-            Console.WriteLine($"{SkillList.FireBall}로 {skill.skillDamage - monsterFactory.monsterDP} 만큼의 데미지를 주었습니다.");
+            monsterBuilder.monstercurHP -= skill.skillDamage - monsterBuilder.monsterDP;
+            Console.WriteLine($"{SkillList.FireBall}로 {skill.skillDamage - monsterBuilder.monsterDP} 만큼의 데미지를 주었습니다.");
         }
 
         public void IceShieldPlayer()
         {
             Console.WriteLine("당신은 IceShield를 사용하여 방어력을 높입니다.");
-            IceShield iceShield = new IceShield();
-            iceShield.DefenceUp();
-            Console.WriteLine($"당신은 방어력이 {iceShield.skillPower} 만큼 상승했습니다.");
+            IceShieldPlayer();
+            
+            Console.WriteLine($"당신은 방어력이 {IceShieldPlayer} 만큼 상승했습니다.");
         }
 
         public void HealPlayer()
         {
             Console.WriteLine("당신은 Heal을 사용하여 회복합니다.");
-            Heal heal = new Heal();
-            heal.Healing();
-            Console.WriteLine($"당신은 체력이 {heal.skillhealPoint} 만큼 회복합니다.");
+            game.heal.Healing();
+            Console.WriteLine($"당신은 체력이 {game.heal.skillhealPoint} 만큼 회복합니다.");
         }
         public void ShowPlayer()
         {

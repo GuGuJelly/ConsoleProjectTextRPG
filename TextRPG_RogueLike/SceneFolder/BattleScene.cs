@@ -38,47 +38,57 @@ namespace TextRPG_RogueLike
         public override void Render()
         {
             Random random = new Random();
-            int spownMonster = random.Next((int)MonsterType.Slime, (int)MonsterType.RatMan);
+            int spawnMonster = random.Next((int)MonsterType.Slime, (int)MonsterType.RatMan);
             
-            switch (spownMonster)
+            switch (spawnMonster)
             {
                 case (int)MonsterType.Orc:
-                    game.OrcFactory.SetmName("Orc");
-                    Console.WriteLine("Orc와 조우했습니다.");
-                    game.OrcFactory.SetMonsterType(MonsterType.Orc);
-                    game.OrcFactory.SetMonstermaxHP(200);
-                    game.OrcFactory.SetMonstercurHP(200);
-                    game.OrcFactory.SetMonstermaxMP(10);
-                    game.OrcFactory.SetMonstercurMP(10);
-                    game.OrcFactory.SetMonsterAP(40);
-                    game.OrcFactory.SetMonsterDP(10);
-                    game.OrcFactory.SetDropItem(ItemType.AllPotion);
+                    Console.WriteLine("오크와 조우했습니다.");
+                    //game.monster Orc0 = game.OrcBuilder.Build();
+                    MonsterBuilder OrcBuilder = new MonsterBuilder();
+                    OrcBuilder.SetmName("오크");
+                    OrcBuilder.SetMonsterType(MonsterType.Orc);
+                    OrcBuilder.SetMonstermaxHP(200);
+                    OrcBuilder.SetMonstercurHP(200);
+                    OrcBuilder.SetMonstermaxMP(10);
+                    OrcBuilder.SetMonstercurMP(10);
+                    OrcBuilder.SetMonsterAP(40);
+                    OrcBuilder.SetMonsterDP(10);
+                    OrcBuilder.SetDropItem(ItemType.AllPotion);
+                    Monster Orc = new Monster();
+                    Orc = OrcBuilder.Build();
                     break;
-
+               
                 case (int)MonsterType.Slime:
-                    game.SlimeFactory.SetmName("Slime");
-                    Console.WriteLine("Slime 과 조우했습니다.");
-                    game.SlimeFactory.SetMonsterType(MonsterType.Slime);
-                    game.SlimeFactory.SetMonstermaxHP(150);
-                    game.SlimeFactory.SetMonstercurHP(150);
-                    game.SlimeFactory.SetMonstermaxMP(10);
-                    game.SlimeFactory.SetMonstercurMP(10);
-                    game.SlimeFactory.SetMonsterAP(30);
-                    game.SlimeFactory.SetMonsterDP(20);
-                    game.SlimeFactory.SetDropItem(ItemType.LongSword);
+                    Console.WriteLine("슬라임 과 조우했습니다.");
+                    MonsterBuilder SlimeBuilder = new MonsterBuilder();
+                    SlimeBuilder.SetmName("슬라임");
+                    SlimeBuilder.SetMonsterType(MonsterType.Slime);
+                    SlimeBuilder.SetMonstermaxHP(150);
+                    SlimeBuilder.SetMonstercurHP(150);
+                    SlimeBuilder.SetMonstermaxMP(10);
+                    SlimeBuilder.SetMonstercurMP(10);
+                    SlimeBuilder.SetMonsterAP(30);
+                    SlimeBuilder.SetMonsterDP(20);
+                    SlimeBuilder.SetDropItem(ItemType.LongSword);
+                    Monster Slime = new Monster();
+                    Slime = SlimeBuilder.Build();
                     break;
-
+               
                 case (int)MonsterType.RatMan:
-                    game.RatManFactory.SetmName("RatMan");
-                    Console.WriteLine("RatMan 과 조우했습니다.");
-                    game.RatManFactory.SetMonsterType(MonsterType.RatMan);
-                    game.RatManFactory.SetMonstermaxHP(300);
-                    game.RatManFactory.SetMonstercurHP(300);
-                    game.RatManFactory.SetMonstermaxMP(10);
-                    game.RatManFactory.SetMonstercurMP(10);
-                    game.RatManFactory.SetMonsterAP(25);
-                    game.RatManFactory.SetMonsterDP(15);
-                    game.RatManFactory.SetDropItem(ItemType.TowerShield);
+                    Console.WriteLine("랫맨 과 조우했습니다.");
+                    MonsterBuilder RatManBuilder = new MonsterBuilder();
+                    RatManBuilder.SetmName("랫맨");
+                    RatManBuilder.SetMonsterType(MonsterType.RatMan);
+                    RatManBuilder.SetMonstermaxHP(300);
+                    RatManBuilder.SetMonstercurHP(300);
+                    RatManBuilder.SetMonstermaxMP(10);
+                    RatManBuilder.SetMonstercurMP(10);
+                    RatManBuilder.SetMonsterAP(25);
+                    RatManBuilder.SetMonsterDP(15);
+                    RatManBuilder.SetDropItem(ItemType.TowerShield);
+                    Monster RatMan = new Monster();
+                    RatMan = RatManBuilder.Build();
                     break;
             }
         }

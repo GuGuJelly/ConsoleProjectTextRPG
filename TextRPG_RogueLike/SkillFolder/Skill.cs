@@ -8,7 +8,8 @@ namespace TextRPG_RogueLike
 {
     public class Skill
     {
-        public Game game;
+        public Player player;
+        
         public SkillList skillName;
         public int skillPower;
         public int skillDefence;
@@ -17,6 +18,11 @@ namespace TextRPG_RogueLike
         public int skillhealPoint;
         public int skillDP;
         public Monster monster;
+
+        public Skill(Player player) 
+        {
+            
+        }
         
     }
 }

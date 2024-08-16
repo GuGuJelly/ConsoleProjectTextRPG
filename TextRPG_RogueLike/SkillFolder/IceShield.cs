@@ -10,18 +10,18 @@ namespace TextRPG_RogueLike
     
     public class IceShield : Skill
     {
-        
-        public IceShield() 
+
+        public IceShield(Player player) : base(player)
         {
             this.skillName = SkillList.IceShield;
         }
         
-        public void DefenceUp()
+        public void DefenceUp(Player player)
         {
             
             this.skillPower = 5;
             this.skillDefence = skillPower;
-            this.game.Player.playerBuffDeffence += skillPower;
+            this.player.playerBuffDeffence += skillPower;
         }
     }
 }

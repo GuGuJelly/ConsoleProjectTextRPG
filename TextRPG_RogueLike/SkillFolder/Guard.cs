@@ -8,5 +8,9 @@ namespace TextRPG_RogueLike
 {
     public class Guard : Skill
     {
+        public Guard(Player player) : base(player)
+        {
+
+        }
     }
 }

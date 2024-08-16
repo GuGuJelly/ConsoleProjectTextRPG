@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Runtime;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using TextRPG_RogueLike.SceneFolder;
@@ -27,9 +29,10 @@ namespace TextRPG_RogueLike
         public Scene CurScene { get { return curScene; } }
         private Player player;
         public Player Player { get { return player; } set { player = value; } }
-        public MonsterFactory OrcFactory = new MonsterFactory();
-        public MonsterFactory SlimeFactory = new MonsterFactory();
-        public MonsterFactory RatManFactory = new MonsterFactory();
+        public MonsterBuilder OrcBuilder = new MonsterBuilder();
+        public MonsterBuilder SlimeBuilder = new MonsterBuilder();
+        public MonsterBuilder RatManBuilder = new MonsterBuilder();
+        
         public Slash slash;
         public FireBall fireBall;
         public Guard guard;
@@ -70,13 +73,13 @@ namespace TextRPG_RogueLike
             scenes[(int)SceneType.Battle] = new BattleScene(this);  
 
             player = new Player();
-            Skill skill = new Skill();
-            slash = new Slash();
-            fireBall = new FireBall();
-            heal = new Heal();
-            iceShield = new IceShield();
-            guard = new Guard();
 
+            //skill = new Skill(this);
+            //slash = new Slash(this);
+            //fireBall = new FireBall(this);
+            //heal = new Heal(this);
+            //iceShield = new IceShield(this);
+            //guard = new Guard(this);
 
             curScene = scenes[(int)SceneType.Title];
             CurScene.Enter();
